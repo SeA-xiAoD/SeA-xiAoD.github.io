@@ -1,68 +1,96 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Dep. of Computer Science, ECNU, Spring 2018" />
-  <title>高级语言程序设计-Ⅱ (C++)</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      div.line-block{white-space: pre-line;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <link rel="stylesheet" href="/css/github.css">
-  <!--[if lt IE 9]>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="author" content="School of Computer Science, Sichuan University, Spring 2018" />
+    <title>高级语言程序设计-Ⅱ (C++)</title>
+    <style type="text/css">
+        code {
+            white-space: pre-wrap;
+        }
+
+        span.smallcaps {
+            font-variant: small-caps;
+        }
+
+        div.line-block {
+            white-space: pre-line;
+        }
+
+        div.column {
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/github.css">
+    <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
+
 <body>
-<header>
-<h1 class="title">高级语言程序设计-Ⅱ</h1>
-<p class="author">School of Computer Science, SCU, Spring 2018</p>
-</header>
-<h2 id="时间地点">时间地点</h2>
-<ul>
-<li>理论课: 周二 16:45 - 18:25 @ 综合楼B座 B403</li>
-<li>实验课: 周二 12:30 - 13:30 @ </li>
-</ul>
-<h2 id="联系信息">联系信息</h2>
-<ul>
-<li>教师: 陈良银</li>
-<li>Email: chenliangyin@scu.edu.cn</li>
-<li>助教: 段海涵</li>
-<li><p>Email: seaxiaod@163.com</p></li>
-</ul>
-<h2 id="参考资料">参考资料</h2>
-<ul>
-<li>《C++：面向对象程序设计（第2版）》</li>
-<li>《C++ Primer (5th Edition)》</li>
-</ul>
-<h2 id="讲义">讲义</h2>
-<ul>
-<li><a href="/slides/第1章 C++基础知识(第2版).ppt">Lecture 1 C++基础知识</a></li>
-<li><a href="/slides/第2章 C++类和对象(第2版).ppt">Lecture 2 C++类和对象</a></li>
-<li><a href="/slides/第3章 继承(第2版).ppt">Lecture 3 继承</a></li>
-<li><a href="/slides/第4章 多态性(第2版).ppt">Lecture 4 多态性</a></li>
-<li><a href="/slides/第5章 模版(第2版).ppt">Lecture 5 模板</a></li>
-<li><a href="/slides/第6章 C++标准模板库(第2版).ppt">Lecture 6 C++标准模板库</a></li>
-<li><a href="/slides/第7章 C++输入输出(第2版).ppt">Lecture 7 C++输入输出</a></li>
-<li><a href="/slides/第8章 C++高级主题(第2版).ppt">Lecture 8 C++高级主题</a></li>
-<li><a href="/slides/第9章 MFC开发(第2版).ppt">Lecture 8 MFC开发</a></li>
-<!--
-    - Project 2 [12](../ref_source/Rumor.java), [16](../ref_source/Snake.java), [17](../ref_source/Goldbach.java), [18 Statistic.java](../ref_source/Statistic.java), [18 Compute.java](../ref_source/Compute.java)
-    - Project 3 [a.6](../ref_source/Cat.java)
-    - Project 4 [c.1 Turtle.java](../ref_source/fractal/Turtle.java), [c.1 内接多边形](../ref_source/fractal/Ngon.java), [c.1 螺旋线](../ref_source/fractal/Spiral.java), [c.2 Koch](../ref_source/fractal/Koch.java)
-    - Project 5 [a.9](../ref_source/InheritanceBasic.java)
-    - Project 6 [c.5](../ref_source/LinkedSequence.java)
---></li>
-</ul>
-<h2 id="实验">实验</h2>
-<p>提交地址: </p>
-<p>提交格式: </p>
-<ul>
-<!--<li>Project 1: <a href="projects/first_java/docs/first_java.html">第一个 Java 程序</a></li>
+    <header>
+        <h1 class="title">高级语言程序设计-Ⅱ</h1>
+        <p class="author">School of Computer Science, Sichuan University, Spring 2018</p>
+    </header>
+    <h2 id="时间地点">时间地点</h2>
+    <ul>
+        <li>理论课: 周二 16:45 - 18:25 @ 综合楼B座 B403</li>
+        <li>实验课: 周二 12:30 - 13:30 @ </li>
+    </ul>
+    <h2 id="联系信息">联系信息</h2>
+    <ul>
+        <li>教师: 陈良银、吴琼</li>
+        <li>Email: chenliangyin@scu.edu.cn</li>
+        <li>助教: 段海涵</li>
+        <li>
+            <p>Email: seaxiaod@163.com</p>
+        </li>
+    </ul>
+    <h2 id="参考资料">参考资料</h2>
+    <ul>
+        <li>《C++：面向对象程序设计（第2版）》</li>
+        <li>《C++ Primer (5th Edition)》</li>
+    </ul>
+    <h2 id="讲义">讲义</h2>
+    <ul>
+        <li>
+            <a href="/slides/第1章 C++基础知识(第2版).ppt">Lecture 1 C++基础知识</a>
+        </li>
+        <li>
+            <a href="/slides/第2章 C++类和对象(第2版).ppt">Lecture 2 C++类和对象</a>
+        </li>
+        <li>
+            <a href="/slides/第3章 继承(第2版).ppt">Lecture 3 继承</a>
+        </li>
+        <li>
+            <a href="/slides/第4章 多态性(第2版).ppt">Lecture 4 多态性</a>
+        </li>
+        <li>
+            <a href="/slides/第5章 模版(第2版).ppt">Lecture 5 模板</a>
+        </li>
+        <li>
+            <a href="/slides/第6章 C++标准模板库(第2版).ppt">Lecture 6 C++标准模板库</a>
+        </li>
+        <li>
+            <a href="/slides/第7章 C++输入输出(第2版).ppt">Lecture 7 C++输入输出</a>
+        </li>
+        <li>
+            <a href="/slides/第8章 C++高级主题(第2版).ppt">Lecture 8 C++高级主题</a>
+        </li>
+        <li>
+            <a href="/slides/第9章 MFC开发(第2版).ppt">Lecture 9 MFC开发</a>
+        </li>
+    </ul>
+    <h2 id="实验">实验</h2>
+    <p>提交地址: </p>
+    <p>提交格式: </p>
+    <ul>
+        <!--<li>Project 1: <a href="projects/first_java/docs/first_java.html">第一个 Java 程序</a></li>
 <li>Project 2: <a href="projects/primitive_ctlflow/docs/primitive_ctlflow.html">基本类型与控制流</a> <!--
 * Project 3: [使用 Java 包](projects/use_data_types/docs/use_data_types.html)
 * Project 4: [创建 Java 类](projects/build_data_types/docs/build_data_types.html)
@@ -70,10 +98,32 @@
 * Project 6: [接口](projects/interface/docs/interface.html)
 * Project 7: [容器与I/O](projects/container_io/docs/container_io.html)
 --></li>
-</ul>
-<h2 id="大作业">大作业</h2>
-<p>提交地址: </p>
-<p>提交格式: </p>
+    </ul>
+    <h2 id="大作业">大作业</h2>
+    <h5>大作业要求：</h5>
+    <li>
+        <p>1.分组要求。大作业将会对同学们进行分组，每个组最多3-4人，为了提升大家的交际与合作能力，每组必须至少有一位女生，可自由组合，并由组长向助教汇报分组情况，鼓励不熟悉的同学间相互组合、相互帮助。</p>
+    </li>
+    <li>
+        <p>2.诚信要求。不得抄袭，发现抄袭者以零分计算。鼓励有自己的idea，按高分计算。可以修改开源代码，但是需要有自己的见解与想法，且此条不鼓励。</p>
+    </li>
+    <li>
+        <p>3.技术要求。要求有GUI(
+            <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">Graphic User Interface</a>)界面，通俗说就是不能是单纯的黑框框程序，大家可以自由调用开源API(
+            <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a>，如
+            <a href="https://msdn.microsoft.com/en-us/library/d06h2x6e%28v=vs.140%29.aspx">MFC</a>、
+            <a href="https://www.opengl.org">OpenGL</a>、
+            <a href="https://opencv.org">OpenCV</a>等。
+        </p>
+    </li>
+    <h5>评分规则：</h5>
+    <li>
+        <p>1.大作业评分由期末汇报与大作业质量共同评估。</p>
+    </li>
+    <li>
+        <p>2.汇报期间，小组成员将接受老师及同学们的提问，且每位同学都需要回答问题，本小组的分数将由提问期间表现最差的同学决定。设置这样的评估方式或许会对优秀的同学有不公平的情况，
+            但是对各位的要求是显而易见的，我们希望各位同学互相帮助，学会团队协作，不要让任何同学掉队，这才是设置小组这样一个集体的意义。</p>
+    </li>
 </body>
-</html>
 
+</html>
