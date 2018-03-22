@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Project 1</title>
+    <style type="text/css">
+        code {
+            white-space: pre-wrap;
+        }
+
+        span.smallcaps {
+            font-variant: small-caps;
+        }
+
+        div.line-block {
+            white-space: pre-line;
+        }
+
+        div.column {
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+        }
+    </style>
+    <style type="text/css">
+        div.sourceLine,
+        a.sourceLine {
+            display: inline-block;
+            min-height: 1.25em;
+        }
+
+        a.sourceLine {
+            pointer-events: none;
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        .sourceCode {
+            overflow: visible;
+        }
+
+        code.sourceCode {
+            white-space: pre;
+        }
+
+        @media print {
+            code.sourceCode {
+                white-space: pre-wrap;
+            }
+            div.sourceLine,
+            a.sourceLine {
+                text-indent: -1em;
+                padding-left: 1em;
+            }
+        }
+
+        pre.numberSource div.sourceLine,
+        .numberSource a.sourceLine {
+            position: relative;
+        }
+
+        pre.numberSource div.sourceLine::before,
+        .numberSource a.sourceLine::before {
+            content: attr(data-line-number);
+            position: absolute;
+            left: -5em;
+            text-align: right;
+            vertical-align: baseline;
+            border: none;
+            pointer-events: all;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding: 0 4px;
+            width: 4em;
+        }
+
+        pre.numberSource {
+            margin-left: 3em;
+            border-left: 1px solid #aaaaaa;
+            color: #aaaaaa;
+            padding-left: 4px;
+        }
+
+        @media screen {
+            a.sourceLine::before {
+                text-decoration: underline;
+                color: initial;
+            }
+        }
+
+        code span.kw {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        /* Keyword */
+
+        code span.dt {
+            color: #902000;
+        }
+
+        /* DataType */
+
+        code span.dv {
+            color: #40a070;
+        }
+
+        /* DecVal */
+
+        code span.bn {
+            color: #40a070;
+        }
+
+        /* BaseN */
+
+        code span.fl {
+            color: #40a070;
+        }
+
+        /* Float */
+
+        code span.ch {
+            color: #4070a0;
+        }
+
+        /* Char */
+
+        code span.st {
+            color: #4070a0;
+        }
+
+        /* String */
+
+        code span.co {
+            color: #60a0b0;
+            font-style: italic;
+        }
+
+        /* Comment */
+
+        code span.ot {
+            color: #007020;
+        }
+
+        /* Other */
+
+        code span.al {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Alert */
+
+        code span.fu {
+            color: #06287e;
+        }
+
+        /* Function */
+
+        code span.er {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Error */
+
+        code span.wa {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Warning */
+
+        code span.cn {
+            color: #880000;
+        }
+
+        /* Constant */
+
+        code span.sc {
+            color: #4070a0;
+        }
+
+        /* SpecialChar */
+
+        code span.vs {
+            color: #4070a0;
+        }
+
+        /* VerbatimString */
+
+        code span.ss {
+            color: #bb6688;
+        }
+
+        /* SpecialString */
+
+        code span.im {}
+
+        /* Import */
+
+        code span.va {
+            color: #19177c;
+        }
+
+        /* Variable */
+
+        code span.cf {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        /* ControlFlow */
+
+        code span.op {
+            color: #666666;
+        }
+
+        /* Operator */
+
+        code span.bu {}
+
+        /* BuiltIn */
+
+        code span.ex {}
+
+        /* Extension */
+
+        code span.pp {
+            color: #bc7a00;
+        }
+
+        /* Preprocessor */
+
+        code span.at {
+            color: #7d9029;
+        }
+
+        /* Attribute */
+
+        code span.do {
+            color: #ba2121;
+            font-style: italic;
+        }
+
+        /* Documentation */
+
+        code span.an {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Annotation */
+
+        code span.cv {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* CommentVar */
+
+        code span.in {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Information */
+    </style>
+    <link rel="stylesheet" href="../../../css/github.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Project 1 回顾C语言基础语法</h1>
+    </header>
+    <p>我知道大家都学过C语言，那C++曾经被人称作“带类的C”，当然，这个说法肯定是不准确的，但是体现了C++对于C语言的延续性。所以我们首先需要回顾一些和C语言相关、相似甚至相同的基础性语法。</p>
+    <h5>Assignment:</h5>
+    <ul>
+        <li><p>1. 编写程序，使程序能够在输入两个整数（int范围内），在标准输出中打印出两个整数之和。</p></li>
+        <li><p>2. 编写程序，使用while循环将50到100的整数相加，并输出和。</p></li>
+        <li><p>3. 编写程序，输入两个整数，第一个整数小于第二个整数，使用for循环，打印出两个数之间的所有整数。</p></li>
+        <li><p>4. 编写程序，任意输入两个数，使用for循环，打印出两个数之间的所有整数。</p></li>
+        <li><p>5. 编写程序，使用if条件句，输入一个整数，按照如下表格打印出对应等级。</p></li>
+        <table>
+            <thead>
+                <tr class="header">
+                    <th style="text-align: left;">分数范围</th>
+                    <th style="text-align: left;">对应等级</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="odd">
+                    <td style="text-align: left;">0 - 59</td>
+                    <td style="text-align: left;">不及格</td>
+                </tr>
+                <tr class="even">
+                    <td style="text-align: left;">60 - 79</td>
+                    <td style="text-align: left;">中等</td>
+                </tr>
+                <tr class="odd">
+                    <td style="text-align: left;">80 - 89</td>
+                    <td style="text-align: left;">良好</td>
+                </tr>
+                <tr class="even">
+                    <td style="text-align: left;">90 - 100</td>
+                    <td style="text-align: left;">优秀</td>
+                </tr>
+                <tr class="odd">
+                    <td style="text-align: left;">其他</td>
+                    <td style="text-align: left;">输入不合法</td>
+            </tbody>
+        </table>
+    </ul>
+    <h5>Consideration:</h5>
+    <ul>
+        <li><p>1. for循环和while循环各有什么优缺点？</p></li>
+        <li><p>2. 指针与引用的区别是什么？</p></li>
+        <li><p>3. 下面这段代码的输出是什么？</p></li>
+        <pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int i = 1;
+
+int main()
+{
+    cout << i << endl;
+    int i = 2;
+    cout << i << endl;
+    for(int i = 3; i <= 10; i++)
+    {
+        cout << i << endl;
+    }
+    cout << i << endl;
+    return 0;
+}
+        </code></pre>
+        <li><p>4. int、long int、long long int、float、double、long double之间的区别是什么？</p></li>
+        <li><p>5. 下面这段代码编译的结果是什么？为什么？</p></li>
+        <pre><code>#include &lt;iostream&gt;
+                
+using namespace std;
+           
+int main()
+{
+    cout << "/*";
+    cout << "*/";
+    cout << /* "*/" */;
+    cout << /* "*/" /* "*/" */;
+    return 0;
+}
+        </code></pre>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>熟悉命令行</title>
+    <style type="text/css">
+        code {
+            white-space: pre-wrap;
+        }
+
+        span.smallcaps {
+            font-variant: small-caps;
+        }
+
+        div.line-block {
+            white-space: pre-line;
+        }
+
+        div.column {
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+        }
+    </style>
+    <style type="text/css">
+        div.sourceLine,
+        a.sourceLine {
+            display: inline-block;
+            min-height: 1.25em;
+        }
+
+        a.sourceLine {
+            pointer-events: none;
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        .sourceCode {
+            overflow: visible;
+        }
+
+        code.sourceCode {
+            white-space: pre;
+        }
+
+        @media print {
+            code.sourceCode {
+                white-space: pre-wrap;
+            }
+            div.sourceLine,
+            a.sourceLine {
+                text-indent: -1em;
+                padding-left: 1em;
+            }
+        }
+
+        pre.numberSource div.sourceLine,
+        .numberSource a.sourceLine {
+            position: relative;
+        }
+
+        pre.numberSource div.sourceLine::before,
+        .numberSource a.sourceLine::before {
+            content: attr(data-line-number);
+            position: absolute;
+            left: -5em;
+            text-align: right;
+            vertical-align: baseline;
+            border: none;
+            pointer-events: all;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding: 0 4px;
+            width: 4em;
+        }
+
+        pre.numberSource {
+            margin-left: 3em;
+            border-left: 1px solid #aaaaaa;
+            color: #aaaaaa;
+            padding-left: 4px;
+        }
+
+        @media screen {
+            a.sourceLine::before {
+                text-decoration: underline;
+                color: initial;
+            }
+        }
+
+        code span.kw {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        /* Keyword */
+
+        code span.dt {
+            color: #902000;
+        }
+
+        /* DataType */
+
+        code span.dv {
+            color: #40a070;
+        }
+
+        /* DecVal */
+
+        code span.bn {
+            color: #40a070;
+        }
+
+        /* BaseN */
+
+        code span.fl {
+            color: #40a070;
+        }
+
+        /* Float */
+
+        code span.ch {
+            color: #4070a0;
+        }
+
+        /* Char */
+
+        code span.st {
+            color: #4070a0;
+        }
+
+        /* String */
+
+        code span.co {
+            color: #60a0b0;
+            font-style: italic;
+        }
+
+        /* Comment */
+
+        code span.ot {
+            color: #007020;
+        }
+
+        /* Other */
+
+        code span.al {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Alert */
+
+        code span.fu {
+            color: #06287e;
+        }
+
+        /* Function */
+
+        code span.er {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Error */
+
+        code span.wa {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Warning */
+
+        code span.cn {
+            color: #880000;
+        }
+
+        /* Constant */
+
+        code span.sc {
+            color: #4070a0;
+        }
+
+        /* SpecialChar */
+
+        code span.vs {
+            color: #4070a0;
+        }
+
+        /* VerbatimString */
+
+        code span.ss {
+            color: #bb6688;
+        }
+
+        /* SpecialString */
+
+        code span.im {}
+
+        /* Import */
+
+        code span.va {
+            color: #19177c;
+        }
+
+        /* Variable */
+
+        code span.cf {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        /* ControlFlow */
+
+        code span.op {
+            color: #666666;
+        }
+
+        /* Operator */
+
+        code span.bu {}
+
+        /* BuiltIn */
+
+        code span.ex {}
+
+        /* Extension */
+
+        code span.pp {
+            color: #bc7a00;
+        }
+
+        /* Preprocessor */
+
+        code span.at {
+            color: #7d9029;
+        }
+
+        /* Attribute */
+
+        code span.do {
+            color: #ba2121;
+            font-style: italic;
+        }
+
+        /* Documentation */
+
+        code span.an {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Annotation */
+
+        code span.cv {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* CommentVar */
+
+        code span.in {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Information */
+    </style>
+    <link rel="stylesheet" href="../../../css/github.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <header>
+        <h1 class="title">熟悉命令行</h1>
+    </header>
+    <p>命令行作为计算机科学中程序的最开端，我个人认为是应当掌握的部分，并且会对你们的未来有非常大的帮助。所以本作业的目的是为了让大家熟悉命令行的使用，并亲身去解决一些奇奇怪怪的问题，填平这些坑，你也能成为一个大神。</p>
+    <p>首先我们要明白
+        <a href="https://en.wikipedia.org/wiki/Command-line_interface"> 命令行 </a>是一个什么东西。命令行其实也就是黑框框，而这个黑框框允许我们对系统进行一些操作。以Windows系统为例，同时按下"Win+R"键，输入"cmd"，就可以看到一个黑框框。这个黑框框内，最左边，是盘符（C、D、E、F之类的），然后是自己的根目录所在的位置，在>符号之后，会有光标在闪动。</p>
+    <p>我们可以输入"abcde"，可以看到，系统提示"abcde"并不是系统内部或外部命令，也不是程序，所以运行失败。可是当我们输入"dir"的时候，我们神奇的发现，所有这个目录下的文件夹被显示了出来，说明"dir"命令执行成功了，之后我们输入"cd
+        (某一个你的文件夹的名字)"(注意中间有空格)后，我们发现我们进入到了这个文件夹中，再输入"cd .."，我们又回到了原来的文件夹。有没有感受到命令行的魔力！！！（好吧我知道你们没有╮(╯_╰)╭）</p>
+    <h2>参考资料</h2>
+        <li><a href="../The Linux Command Line(C).PDF">《The Linux Command Line》</a></li>
+    <h2>系统选择</h2>
+    <p>这里我推荐使用
+        <a href="https://en.wikipedia.org/wiki/Linux">Linux</a>操作系统，常见的Linux操作系统有（
+        <a href="https://www.ubuntu.com/download/">Ubuntu</a>、
+        <a href="https://www.centos.org/download/">CentOS</a>、
+        <a href="https://www.debian.org/distrib/">Debian</a>等）。因为主流的命令行都是Linux方式的，极少极少会有用到Windows命令行的，并且未来各位是一定会用到Linux的，现在熟悉的话对未来会有很大的益处，当然，如果各位要强行使用Windows那我也不拦着各位，不过Windows方面的命令行我也不是很熟，各位的弯路可能要自己走。（注：苹果的Mac
+        OS X系统的内核是Unix，也就是和Linux来自一个源头，所以命令行是几乎相同的）</p>
+    <h2>Linux安装</h2>
+    <p>
+        <li>1. 双系统</li>
+        <p>可参考<a href="https://www.zhihu.com/question/34611974">知乎</a>，不看最高赞那个，看@RTMLD的那个，简洁明了。</p>
+        <li>2. 虚拟机</li>
+        <p>推荐<a href="https://www.vmware.com">VMware</a>，安装过程参见<a href="https://jingyan.baidu.com/article/c275f6ba07e269e33d756714.html">教程</a>。</p>
+        <li>3. Windows Subsystem for Linux</li>
+        <p>这个我没有用过，但是听说挺好用的，参见<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL</a>。</p>
+        <li>4. Mac OS X</li>
+        <p>对于资金丰富的同学来说，可以考虑买个<a href="https://www.apple.com/cn/mac/"></a>的电脑，其OS X系统是Unix内核，和Linux的命令行是一样的。</p>
+    </p>
+    <h2>GCC编译器安装</h2>
+    <p>
+        <p>当各位同学安装完Linux后，就可以打开进行瞎操作了。一段操作之后，然后我们就需要各位做点正事了，安装C/C++的编译器。理论上大多数Linux系统安装之后都已经预装了GCC编译器，各位同学可以打开Linux系统的命令行（也就是终端——Terminal），输入以下命令查看。
+        <pre><code>gcc --version</code></pre>
+        如果出现了对应gcc的版本号，那就说明gcc已经预装在系统中了。如果出现command not find的话，请跟随下列方法安装gcc。</p>
+        <li>Ubuntu</li>
+        <p><pre><code>apt-get update
+apt-get install gcc</code></pre></p>
+        <li>CentOS</li>
+        <p><pre><code>yum update
+yum install gcc</code></pre></p>
+        <li>Mac OS X</li>
+        <p><pre><code>brew update
+brew install gcc</code></pre></p>
+        <li>其他系统</li>
+        <p>对于使用其他系统的同学，可以查找本系统对应的应用安装命令，用上述同样的方式来安装gcc编译器。</p>
+    </p>
+    <h2>第一个Linux程序</h2>
+    <p>
+        <p>打开命令行，我们首先建立一个文件夹。<pre><code>mkdir FisrtProgram</code></pre></p>
+        <p>然后我们进入到这个文件夹中。<pre><code>cd FisrtProgram</code></pre></p>
+        <p>然后我们使用Linux系统自带的gedit编辑器，建立一个C++文件，输入以下命令。<pre><code>gedit HelloLinux.cpp</code></pre></p>
+        <p>此时可以看到打开了一个编辑器，我们在其中输入以下代码，按ctrl+s保存文件。<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+                
+int main()
+{
+    cout << "Hello Linux!" << endl;
+    return 0;
+}</code></pre></p>
+        <p>代码编辑完成后，我们可以编译这个文件了。<pre><code>g++ HelloLinux.cpp</code></pre></p>
+        <p>然后我们发现，在这个文件夹中多了一个名为a.out的文件，这个就是我们编译成功的可以运行的文件了，输入下列命令可以看到标准输出中打印出了"Hello Linux!"。<pre><code>./a.out</code></pre></p>
+        <p>当然了，在这个过程中可能会遇到很多问题，请各位同学善用搜索器来填平这些坑。</p>
+    </p>
+    <h2>课后作业（不需要提交）</h2>
+        <p>接下来呢就是你们自己探索的时间了，课后作业的目的是希望大家能够熟悉命令行的基本操作，做到在terminal中不会迷路，就OK了。完成了基本的熟悉之后，就可以考虑在Linux中编写自己的C++作业了。</p>
+        <p><li>1. 阅读《The Linux Command Line》的前6章。</li></p>
+        <p><li>2. 编写下列程序</li></p>
+        <pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(int argc, char **argv)
+{
+    cout << argc << endl;
+    cout << argv[0] << endl;
+    cout << "Hello " << argv[1] << "!" << endl;
+    return 0;
+}</code></pre>
+        <p>输入<pre><code>./a.out Alice</code></pre>得到的输出是什么？你能理解argc和argv的意思吗？</p>
+        <p><li>3. 给定5个整数（通过命令行参数），找出它们的中位数（即第3大的数）。</li></p>
+        <p><li>4. 给定命令行参数 x1, y1, x2, y2， 计算平面上的点 (x1, y1) 和 (x2, y2) 的距离。</li></p>
+        <p><li><p>5. 给定N（通过命令行参数），输出N阶蛇型矩阵<span class="math inline">\(S(N)\)</span>，以下分别是<span class="math inline">\(S(1), S(2), S(3), S(4)\)</span>。 <span class="math display">\[\begin{eqnarray*}
+            S(1) = 
+            \begin{bmatrix}
+            1
+            \end{bmatrix},
+            S(2) = 
+            \begin{bmatrix}
+            1 &amp; 2 \\
+            4 &amp; 3
+            \end{bmatrix},
+            S(3) = 
+            \begin{bmatrix}
+            1 &amp; 2 &amp; 3 \\
+            8 &amp; 9 &amp; 4 \\
+            7 &amp; 6 &amp; 5
+            \end{bmatrix},
+            S(4) = 
+            \begin{bmatrix}
+            1 &amp; 2 &amp; 3 &amp; 4 \\
+            12 &amp; 13 &amp; 14 &amp; 5\\
+            11 &amp; 16 &amp; 15 &amp; 6\\
+            10 &amp; 9 &amp; 8 &amp; 7
+            \end{bmatrix}
+            \end{eqnarray*}\]</span></p></li></p>
+</body>
+
+</html>
