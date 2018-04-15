@@ -464,9 +464,10 @@
     </ul>
     <h5>Hint:</h5>
     <ul>
-        <p>如果使用Linux的G++编译器去编译多个文件，如：MyClass.h（用于写类的声明）、MyClass.cpp（用于写类的实现）、test.cpp（用于写主函数等），此时在命令行编译时，不需要编译头文件：（下列为Linux命令，#为shell中的注释符号）</p>
+        <li><p>1. 如果使用Linux的G++编译器去编译多个文件，如：MyClass.h（用于写类的声明）、MyClass.cpp（用于写类的实现）、test.cpp（用于写主函数等），此时在命令行编译时，不需要编译头文件：（下列为Linux命令，#为shell中的注释符号）</p></li>
         <pre><code>g++ test.cpp MyClass.cpp -o programName #-o 后接编译完成后的程序名（也可以不用-o，则程序名为a.out）
 ./programName #执行程序</code></pre>
+        <li><p>2. 读取ComplexNum对象的时候，由于还没有要求写输入重载运算符，所以各位可以首先读入实部、然后读入虚部，再用这两个读入的数据去初始化ComplexNum对象。</p></li>
     </ul>
 </body>
 
