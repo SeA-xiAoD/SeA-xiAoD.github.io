@@ -288,7 +288,7 @@
     <header>
         <h1 class="title">Project 4 类的实现（2）</h1>
     </header>
-    <p>经过上一个实验的训练，相信大家对其他人写的类的使用已经有了一个基本的概念，并且能够在他人提供了头文件和类实现的情况下，能够顺利地调用其他人所写的类与其类方法。对于面向对象的语言来说，我个人认为，学会使用别人写好的库虽然重要，但是真正的开发过程都是需要我们自己来完成类的实现，所以这也正是我们学习面向对象语言最重要的部分。从本次练习开始，除了一次C++标准库的练习以外，后面几乎所有的练习都会涉及到类的实现，所以请大家重视这块知识的把握。</p>
+    <p>本实验将会继续练习类的实现，本次练习的重点将放在重载运算符上。另外一个重点稍微涉及算法方面的知识，是对长度不定的长整数实现其加减乘除运算，各位需要自己设计加减乘除法，来对string类型存储表示的长整数进行运算，希望各位能够克服难关。</p>
     <h2>长整数</h2>
     <h3>简介：</h3>
     <p>C++内置的整数类型
@@ -300,7 +300,7 @@
     <h5>Assignment:</h5>
     <ul>
         <li>
-            <p>1. 编写程序，实现长整数类：BigInt。支持任意精度的整数及其运算，包含以下API：（建议将声明与其函数分开实现，即头文件中写类的声明、cpp中写函数实现，作业提交时，上传BigInt.h、BigInt.cpp，而不用3_1.h、3_1.cpp这样的命名方式）</p>
+            <p>1. 编写程序，实现长整数类：BigInt。支持任意精度的整数及其运算，包含以下API：（建议将声明与其函数分开实现，即头文件中写类的声明、cpp中写函数实现，作业提交时，上传BigInt.h、BigInt.cpp，而不用4_1.h、4_1.cpp这样的命名方式）</p>
         </li>
         <table>
             <thead>
@@ -319,52 +319,59 @@
                     <td align="left">使用字符串构造长整数</td>
                 </tr>
                 <tr class="odd">
-                    <td align="left">BigInt add(BigInt x)</td>
+                    <td align="left">BigInt operator+(BigInt &x)</td>
                     <td align="left">返回与 x 的和</td>
                 </tr>
                 <tr class="even">
-                    <td align="left">BigInt substract(BigInt x)</td>
+                    <td align="left">BigInt operator-(BigInt &x)</td>
                     <td align="left">返回与 x 的差</td>
                 </tr>
                 <tr class="odd">
-                    <td align="left">BigInt multiply(BigInt x)</td>
+                    <td align="left">BigInt operator*(BigInt &x)</td>
                     <td align="left">返回与 x 的积</td>
                 </tr>
                 <tr class="even">
-                    <td align="left">BigInt divide(BigInt x)</td>
+                    <td align="left">BigInt operator/(BigInt &x)</td>
                     <td align="left">返回除以 x 后的商</td>
                 </tr>
                 <tr class="odd">
-                    <td align="left">BigInt mod(BigInt x)</td>
+                    <td align="left">BigInt operator%(BigInt &x)</td>
                     <td align="left">返回除以 x 后的余数</td>
                 </tr>
                 <tr class="even">
-                    <td align="left">int compare(BigInt x)</td>
-                    <td align="left">如果大于x则返回1； 如果小于x则返回-1；如果相等则返回0</td>
+                    <td align="left">bool operator>(BigInt &x)</td>
+                    <td align="left">如果大于x则返回ture； 如果小于x则返回false</td>
                 </tr>
                 <tr class="odd">
-                    <td align="left">bool equals(BigInt x)</td>
+                    <td align="left">bool operator==(BigInt &x)</td>
                     <td align="left">是否等于x</td>
                 </tr>
                 <tr class="even">
-                    <td align="left">string print()</td>
-                    <td align="left">返回这个数的string表示</td>
+                    <td align="left">bool operator<(BigInt &x)</td>
+                    <td align="left">如果大于x则返回false； 如果小于x则返回true</td>
+                </tr>
+                <tr class="odd">
+                    <td align="left">friend ostream& operator<<(ostream& output, BigInt& x)</td>
+                    <td align="left">流输出运算符重载</td>
+                </tr>
+                <tr class="even">
+                    <td align="left">friend ostream& operator>>(istream& input, BigInt& x)</td>
+                    <td align="left">流输入运算符重载</td>
                 </tr>
             </tbody>
         </table>
         
         <li>
-            <p>2. 编写程序，读取两个Sales_item对象，比较他们的ISBN号是否相等。</p>
+            <p>2. 编写程序，读取一个 BigInt 对象n，使用这个对象计算阶乘<span class="math inline">\(n!\)</span>。（注意：读取时使用输入重载运算符即 cin >> x（x为BigInt类型变量名），下面题目亦然）</p>
         </li>
         <li>
-            <p>3. 编写程序，读取两个ISBN相同的Sales_item对象，并打印出他们的和。</p>
+            <p>3. 编写程序，读取一个 BigInt 对象n，使用这个对象的指数函数<span class="math inline">\(2^n\)</span>。</p>
         </li>
         <li>
-            <p>4. 编写程序，读取多个ISBN相同的Sales_item对象，并打印出他们的和，以及他们的均价。（提示：在不确定数量的多个对象输入时可用EOF
-                <a href="https://en.wikipedia.org/wiki/End-of-file">(End of File)</a>结束输入）</p>
+            <p>4. 编写程序，读取两个 BigInt 对象x、y，输出他们的和、差、积、商、余数。</p>
         </li>
         <li>
-            <p>5. 编写程序，读取多个Sales_item对象，ISBN相同的对象相连输入，当输入不同的对象或没有输入结束时，打印出对象的和，以及他们的均价。实例输入如下：</p>
+            <p>5. 编写程序，读取两个 BigInt 对象x、y，输出比较 x > y、x < y 和 x == y 的结果。</p>
         </li>
         
     </ul>
@@ -372,19 +379,19 @@
     <h5>Consideration:</h5>
     <ul>
         <li>
-            <p>1. 仔细阅读Sales_item.h文件，并对照Source中的表格，找到每个操作对应的代码位置。</p>
+            <p>1. 除了已经使用的方法外, 你能否想到其他方法来实现 BigInt ？</p>
         </li>
         <li>
-            <p>2. 在Source中的表格里，并没有每个操作对应的输入与返回值，请找到每个操作的输入与返回值，查看他们的类型，并理解每个操作的用法。</p>
+            <p>2. 比较 BigInt 与 int 的性能差异（例如做多次运算时间上的区别，且运算范围在 int 范围内），并尝试分析原因。</p>
         </li>
         <li>
-            <p>3. Sales_item对象的初始化方式有哪几种？</p>
+            <p>3. 思考输入输出运算符重载为什么和其他运算符的重载方式不同？</p>
         </li>
         <li>
-            <p>4. 头文件中，inline关键字的用处是什么？为什么要使用它？</p>
+            <p>4. 思考输入输出运算符重载时为什么要使用 friend 关键字？</p>
         </li>
         <li>
-            <p>5. 头文件中，friend关键字的用处是什么？为什么要使用它？</p>
+            <p>5. 复习继承与多态的知识，为下次作业做准备。</p>
         </li>
     </ul>
 </body>
