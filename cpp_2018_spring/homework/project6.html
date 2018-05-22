@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="generator" content="pandoc" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-    <title>Project 5</title>
+    <title>Project 6</title>
     <style type="text/css">
         code {
             white-space: pre-wrap;
@@ -286,78 +286,22 @@
 
 <body>
     <header>
-        <h1 class="title">Project 5 类的继承</h1>
+        <h1 class="title">Project 6 模板</h1>
     </header>
-    <p>本实验将会继续练习类的实现，本次练习的重点将放在类的继承上。本次作业会比较简单，还请大家把时间重点花在大作业上。本次作业比较开放，大家可以按自己的想法对类的内容进行发挥。</p>
+    <p>本实验将会联系模板和模板类的编程。本次作业依旧比较简单，还请大家把时间重点花在大作业上。</p>
     <h5>Notice:</h5>
     <ul>
         <p>
-            本次作业上传2个文件：People.h、People.cpp
+            本次作业上传6个文件：List.h、List.cpp，其他4个按题号命名。
         </p>
     </ul>
     <h5>Assignment:</h5>
     <ul>
         <li>
-            <p>1. 编写程序，定义 Name 类包含以下成员，其中数据成员是私有的，方法是公开，根据自己的理解定义、补充。</p>
+            <p>1. 编写程序，定义模板函数 template &lt;typename T&gt; bool littleThan(T a, T b)，使其能够对传入不同类型的值时能够比较大小，其中a、b的类型相同，当a < b时返回true，否则返回false。测试 compare(1,0)、compare(1,1)、compare(0,1)。</p>
         </li>
-        <table>
-            <thead>
-            <tr class="header">
-            <th align="left">数据成员</th>
-            <th align="left">说明</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="odd">
-            <td align="left">firstName</td>
-            <td align="left">名</td>
-            </tr>
-            <tr class="even">
-            <td align="left">lastName</td>
-            <td align="left">姓</td>
-            </tr>
-            </tbody>
-            </table>
-            <table>
-            <thead>
-            <tr class="header">
-            <th align="left">方法 </th>
-            <th align="left">说明</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="odd">
-            <td align="left">Name()</td>
-            <td align="left">构造函数</td>
-            </tr>
-            <tr class="even">
-            <td align="left">Name(f, l)</td>
-            <td align="left">构造函数, 其中f为名, l为姓</td>
-            </tr>
-            <tr class="odd">
-            <td align="left">getFirstName()</td>
-            <td align="left">返回名</td>
-            </tr>
-            <tr class="even">
-            <td align="left">setFirstName(f)</td>
-            <td align="left">设置名</td>
-            </tr>
-            <tr class="odd">
-            <td align="left">getLastName()</td>
-            <td align="left">返回姓</td>
-            </tr>
-            <tr class="even">
-            <td align="left">setLastName(l)</td>
-            <td align="left">设置姓</td>
-            </tr>
-            <tr class="odd">
-            <td align="left">toString()</td>
-            <td align="left">转化为String</td>
-            </tr>
-            </tbody>
-            </table>
         <li>
-            <p>2. 编写程序，定义 Person 类包含以下成员，其中部分数据成员是私有的，部分数据成员是公开的，方法是公开，根据自己的理解定义、补充。</p>
+            <p>2. 编写程序，定义模板类 List 包含以下成员（ template &lt;typename elemType&gt; class List ），其功能类似STL标准库中的vector（当然了，vector中是没有最大长度限制的，这里是为了给大家简化难度），包含以下几个函数，根据自己的理解定义、补充。</p>
         </li>
         <table>
             <thead>
@@ -368,20 +312,20 @@
             </thead>
             <tbody>
             <tr class="odd">
-            <td align="left">name</td>
-            <td align="left">姓名( Name 对象, 公开的)</td>
+            <td align="left">count</td>
+            <td align="left">List中现在包含元素个数(unsigned, 公开的)</td>
             </tr>
             <tr class="even">
-            <td align="left">age</td>
-            <td align="left">年龄(常量, 公开的)</td>
-            </tr>
-            <tr class="odd">
-            <td align="left">gender</td>
-            <td align="left">性别(私有的)</td>
-            </tr>
+            <td align="left">contain_list</td>
+            <td align="left">用于存储的数组(elemType的数组类型, 私有的)</td>
             </tbody>
-            </table>
-            <table>
+            <tbody>
+                <tr class="odd">
+                <td align="left">max_length</td>
+                <td align="left">List中包含元素个数的上限(unsigned, 私有的)</td>
+                </tr>
+        </table>
+        <table>
             <thead>
             <tr class="header">
             <th align="left">方法 </th>
@@ -390,43 +334,62 @@
             </thead>
             <tbody>
             <tr class="odd">
-            <td align="left">Person()</td>
+            <td align="left">List()</td>
             <td align="left">构造函数</td>
             </tr>
             <tr class="even">
-            <td align="left">Person(a, g, f, l)</td>
-            <td align="left">构造函数, 其中 a 为年龄, g 为性别, f为名, l为姓</td>
+            <td align="left">List(max_length)</td>
+            <td align="left">构造函数, max_length为List中包含元素个数的上限</td>
             </tr>
             <tr class="odd">
-            <td align="left">getGender()</td>
-            <td align="left">返回性别</td>
+            <td align="left">getMaxLength()</td>
+            <td align="left">返回max_length</td>
             </tr>
             <tr class="even">
-            <td align="left">setGender(g)</td>
-            <td align="left">设置性别</td>
+            <td align="left">setMaxLength(max_length)</td>
+            <td align="left">设置max_length</td>
             </tr>
             <tr class="odd">
-            <td align="left">talk()</td>
-            <td align="left">输出&quot;Hi, how is it going&quot;</td>
+            <td align="left">getCount()</td>
+            <td align="left">返回count</td>
             </tr>
             <tr class="even">
-            <td align="left">talk(s)</td>
-            <td align="left">输出字符串对象s</td>
+            <td align="left">push_back(item)</td>
+            <td align="left">将item插入数组的最后</td>
             </tr>
             <tr class="odd">
-            <td align="left">chatWith(p, s)</td>
-            <td align="left">p 为 Person 对象, s 为字符串对象. 输出&quot;A to B: s&quot;, 其中 A 是调用者的姓名, B 是 p 的姓名</td>
+            <td align="left">getElem(index)</td>
+            <td align="left">返回数组中第index的元素</td>
+            </tr>
+            </tr>
+            <tr class="even">
+            <td align="left">setElem(item, index)</td>
+            <td align="left">将数组中第index的元素修改为传入的item</td>
+            </tr>
+            <tr class="odd">
+            <td align="left">deleteElem(index)</td>
+            <td align="left">删除数组中第index的元素</td>
+            </tr>
+            </tr>
+            <tr class="even">
+            <td align="left">insertElem(index, item)</td>
+            <td align="left">将item放在数组的第index个位置，原来的元素顺序后移</td>
+            </tr>
+            </tr>
+            <tr class="odd">
+            <td align="left">...</td>
+            <td align="left">补充你觉得不完善的功能</td>
             </tr>
             </tbody>
-            </table>
+        </table>
         <li>
-            <p>3. 编写程序，定义 Student 类为 Person 类的子类，类内容自行发挥，要求重载 talk() 函数，输出"Hi, how is your homework going?"。</p>
+            <p>3. 编写程序，使用上述 List 类，存入 int 类型的1到10，并输出 List 中的第0到9个元素。</p>
         </li>
         <li>
-            <p>4. 编写程序，定义 Teacher 类为 Person 类的子类，类内容自行发挥，要求重载 talk() 函数，输出"Hi, how is your paper going?"。</p>
+            <p>4. 编写程序，使用上述 List 类，存入 string 类型的"Bob", "John", "Alice", "Lucy", "Frank", 删除其中的第1和第4个元素。</p>
         </li>
         <li>
-            <p>5. 编写程序，重载 Student 类 chatWith(p, s) 函数，当 p 是 Teacher 类时，输出"Student A to Teacher B: s"，其中 A 是调用者的姓名, B 是 p 的姓名。重载 Teacher 类 chatWith(p, s) 函数，当 p 是 Student 类时，输出"Teacher A to Student B: s"，其中 A 是调用者的姓名, B 是 p 的姓名。当 p 时 Person 类时不变。</p>
+            <p>5. 编写程序，使用上述 List 类，存入 double 类型的1.0, 2.0, 3.0, 4.0, 5.0，将值为3.0的数修改为6.0。</p>
         </li>
         
     </ul>
@@ -434,19 +397,19 @@
     <h5>Consideration:</h5>
     <ul>
         <li>
-            <p>1. 在 Person 类中(例如 chatWith 方法中)能否直接访问 name 对象的数据成员？</p>
+            <p>1. 思考你的 List 是否能够处理所有的用户调用？如当数组中没有元素时候调用 deleteElem、当元素个数达到 max_length 时插入元素等。</p>
         </li>
         <li>
-            <p>2. 思考如何写程序验证 Teacher, Student 类中 talk() 方法是动态绑定的。</p>
+            <p>2. 思考如何让 List 中同时存多个不同类型的数据？如 int、double。</p>
         </li>
         <li>
-            <p>3. 思考如何定义 ElderTeacher 类为 Teacher 类的子类, 要求 ElderTeacher 类最多只能有一个实例。（单例模式）</p>
+            <p>3. 思考如何拷贝 List ？如何用 List 初始化 List？</p>
         </li>
         <li>
-            <p>4. 思考用 Person 类你还能继承出什么子类？如 Programmer 类。</p>
+            <p>4. 思考如果不设定 max_length 会怎么样？改如何编写程序？</p>
         </li>
         <li>
-            <p>5. 复习模板 Template 的知识，为下次作业做准备。</p>
+            <p>5. 好好做大作业！！期末了！！别拖！！小组合作起来！！</p>
         </li>
     </ul>
 </body>
